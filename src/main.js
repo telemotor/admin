@@ -3,8 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import VueMaterial from 'vue-material'
 
 Vue.config.productionTip = false
+Vue.use(VueMaterial)
+
+require('vue-material/dist/vue-material.css')
 
 /* eslint-disable no-new */
 new Vue({
