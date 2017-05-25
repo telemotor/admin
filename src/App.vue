@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <md-toolbar>
-      <md-button class="md-icon-button">
+      <md-button class="md-icon-button" @click.native="toggleLeftSidenav">
         <md-icon>menu</md-icon>
       </md-button>
 
@@ -11,6 +11,20 @@
         <md-icon>favorite</md-icon>
       </md-button>
     </md-toolbar>
+
+    <md-sidenav class="md-left" ref="leftSidenav">
+      <md-list>
+        <md-list-item>
+          <router-link to="/">Main</router-link>
+        </md-list-item>
+        <md-list-item>
+          <router-link to="/define_event">Define event</router-link>
+        </md-list-item>
+        <md-list-item>
+          <router-link to="/create_report">Create report</router-link>
+        </md-list-item>
+      </md-list>
+    </md-sidenav>
 
     <router-view></router-view>
 
@@ -33,7 +47,12 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  methods: {
+    toggleLeftSidenav () {
+      this.$refs.leftSidenav.toggle()
+    }
+  }
 }
 </script>
 
