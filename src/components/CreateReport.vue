@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'createreport',
+  name: 'createReport',
   data () {
     return {}
   }
